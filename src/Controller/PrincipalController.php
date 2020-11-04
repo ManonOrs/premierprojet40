@@ -25,4 +25,11 @@ class PrincipalController extends AbstractController
             "nom" => $nom
         ));
     }
+    
+    /**
+     * @route("/test/{departement}/{sexe}")
+     */
+    public function test($departement,$sexe) {
+        return $this->render('principal/test.html.twig',array("departement" => $departement,"sexe" => $sexe ));
+    }
 }
