@@ -17,4 +17,12 @@ class PrincipalController extends AbstractController
             'controller_name' => 'PrincipalController',
         ]);
     }
+    /**
+     * @route("/welcome/{nom}")
+     */
+    public function welcome($nom) {
+        return $this->render('principal/welcome.html.twig',array(
+            "nom" => $nom
+        ));
+    }
 }
