@@ -26,6 +26,12 @@ class Employe
      * @ORM\Column(type="decimal", precision=9, scale=2)
      */
     private $salaire;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Lieu", inversedBy="lesEmployes")
+     * @ORM\JoinColumn(name = "idLieu" , nullable=false)
+     */
+    private $lieu;
 
     public function getId(): ?int
     {
@@ -54,5 +60,10 @@ class Employe
         $this->salaire = $salaire;
 
         return $this;
+    }
+    
+    public function getLieu()
+    {
+        return $this->lieu;
     }
 }
